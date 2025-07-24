@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artesanato</title>
+</head>
+<body>
+    <header>
+
+        <h4> FestasCaicoenses</h4>
+
+        <form role="search" aria-label="formulario_pesquisa" id="barra_pesquisa">
+        <label for="input_search"></label>
+        <input type="search" id="input_search" name="q" placeholder="Pesquisar" aria-label="campo_pesquisa">
+        </form>
+
+        <nav aria-label="Navegaçao">
+            <ul>
+                <li><a href="index.html">Pagina Inicial</a></li>
+                <li><a href="programacao.html">Programação Geral</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="familia.html">Eventos em Família</a></li>
+                <li><a href="atos.html">Atos Religiosos</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+                <li><a href="encerramento.html">Encerramento</a></li>
+                <li><a href="organizadores.html">Organizadores</a></li>
+                <li><a href="perfis.html">Perfis</a></li>
+            </ul>
+        </nav>
+
+         <h1>Artesanato</h1>
+
+    </header>
+    <main>
+
+        <article>
+            <ul>
+                <li> 18/07 - Abertura da III Expor Moda Seridó.</li>
+                <li>Desfile de coleções de moda autorais de artesãs.</li>
+                <li>Atrações: Pantim, Dodora Cardoso.</li>
+                <li>23/07 - III Expor Moda Seridó:Exposição contínua das coleções de moda autorais das artesãs do Seridó.</li>
+                <li>21/07 a 27/07 - Lançamento da exposição “A chegada do bordado na região do Seridó”.</li>
+                <li>Lançamento da Sala do Bordado de Caicó (Indicação Geográfica).</li>
+                <li>Atração: Recital Poemas e Canções do Ser_tão com Hercília e Marcus Vinícius.</li>
+            </ul>
+        </article>
+       
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        const searchForm = document.getElementById("barra_pesquisa");
+        const searchInput = document.getElementById("input_search");
+        const searchResultados = document.getElementById("resultados");
+      
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const searchMap = {
+                "programacao geral": "programacao.html",
+                "pagina inicial": "index.html",
+                "shows": "shows.html",
+                "eventos em familia": "familia.html",
+                "atos religiosos": "atos.html",
+                "historia": "historia.html",
+                "trajetoria dos peregrinos": "peregrinos.html",
+                "encerramento": "encerramento.html",
+                "organizadores": "organizadores.html",
+                "perfis": "perfis.html"
+            };
+            if (searchMap[searchTerm]) {
+                window.location.href = searchMap[searchTerm];
+            }
+            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
+            }
+
+            else {
+                searchResultados.textContent = 'Digite algo para pesquisar';
+            } 
+        });
+     });
+       </script>
+</body>
+</html>

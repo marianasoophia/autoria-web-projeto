@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encerramento</title>
+</head>
+<body>
+    <header>
+
+        <h4> FestasCaicoenses</h4>
+
+        <form role="search" aria-label="formulario_pesquisa" id="barra_pesquisa">
+        <label for="input_search"></label>
+        <input type="search" id="input_search" name="q" placeholder="Pesquisar" aria-label="campo_pesquisa">
+        </form>
+
+        <nav aria-label="Navegaçao">
+            <ul>
+                <li><a href="index.html">Pagina Inicial</a></li>
+                <li><a href="programacao.html">Programação Geral</a></li>
+                <li><a href="artesanato.html">Artesanato</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="familia.html">Eventos em Família</a></li>
+                <li><a href="atos.html">Atos Religiosos</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+                <li><a href="organizadores.html">Organizadores</a></li>
+                <li><a href="perfis.html">Perfis</a></li>
+            </ul>
+        </nav>
+
+        <h1>Encerramento</h1>
+
+    </header>
+    <main>
+        <p>A festa se encerrará no dia 27/07, 10° dia de novenário, com show da irmã Kelly Patrícia. A procissão reúne milhares de fieis todos os anos.</p>
+        <img src="imagens/imagem2_proposta.jfif" alt="imagem de Sant'Ana" width="450px">
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        const searchForm = document.getElementById("barra_pesquisa");
+        const searchInput = document.getElementById("input_search");
+        const searchResultados = document.getElementById("resultados");
+      
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const searchMap = {
+                "programacao geral": "programacao.html",
+                "artesanato": "artesanato.html",
+                "shows": "shows.html",
+                "eventos em familia": "familia.html",
+                "atos religiosos": "atos.html",
+                "historia": "historia.html",
+                "trajetoria dos peregrinos": "peregrinos.html",
+                "pagina inicial": "index.html",
+                "organizadores": "organizadores.html",
+                "perfis": "perfis.html"
+            };
+            if (searchMap[searchTerm]) {
+                window.location.href = searchMap[searchTerm];
+            }
+            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
+            }
+
+            else {
+                searchResultados.textContent = 'Digite algo para pesquisar';
+            } 
+        });
+     });
+       </script>
+</body>
+</html>

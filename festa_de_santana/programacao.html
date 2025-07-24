@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Geral</title>
+</head>
+<body>
+    <header>
+
+        <h4> FestasCaicoenses</h4>
+
+        <form role="search" aria-label="formulario_pesquisa" id="barra_pesquisa">
+        <label for="input_search"></label>
+        <input type="search" id="input_search" name="q" placeholder="Pesquisar" aria-label="campo_pesquisa">
+        </form>
+
+        <nav aria-label="Navegaçao">
+            <ul>
+                <li><a href="index.html">Pagina Inicial</a></li>
+                <li><a href="artesanato.html">Artesanato</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="familia.html">Eventos em Família</a></li>
+                <li><a href="atos.html">Atos Religiosos</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+                <li><a href="encerramento.html">Encerramento</a></li>
+                <li><a href="organizadores.html">Organizadores</a></li>
+                <li><a href="perfis.html">Perfis</a></li>
+            </ul>
+        </nav>
+
+    <h1>Programação Geral</h1>
+
+    </header>
+
+    <main>
+        <article>
+            <ul>
+                <li>Feirinha de Sant'ana - 24/07 Praça Monsenhor Walfredo Gurgel.</li>
+                <li> Festa dos doces: 16/07 no Pavilhão de Sant'ana.</li>
+                <li>Jantar de Sant'ana: 17/07 no Pavilhão de Sant'ana.</li>
+                <li>Marcha dos idosos do Seridó: 18/07 Praça de Alimentação.</li>
+                <li>Encontro das Crianças com a Avó Sant'Ana - 19/07 Praça de Alimentação.</li>
+                <li> Cavalgada e Leilão de Sant'ana - 20 /07 no Parque de Exposições Monsenhor Walfredo Gurgel.</li>
+            </ul>
+        </article>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        const searchForm = document.getElementById("barra_pesquisa");
+        const searchInput = document.getElementById("input_search");
+        const searchResultados = document.getElementById("resultados");
+      
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const searchMap = {
+                "pagina inicial": "index.html",
+                "artesanato": "artesanato.html",
+                "shows": "shows.html",
+                "eventos em familia": "familia.html",
+                "atos religiosos": "atos.html",
+                "historia": "historia.html",
+                "trajetoria dos peregrinos": "peregrinos.html",
+                "encerramento": "encerramento.html",
+                "organizadores": "organizadores.html",
+                "perfis": "perfis.html"
+            };
+            if (searchMap[searchTerm]) {
+                window.location.href = searchMap[searchTerm];
+            }
+            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
+            }
+
+            else {
+                searchResultados.textContent = 'Digite algo para pesquisar';
+            } 
+        });
+     });
+       </script>
+</body>
+</html>

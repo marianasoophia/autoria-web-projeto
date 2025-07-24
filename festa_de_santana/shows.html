@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows</title>
+</head>
+<body>
+    <header>
+
+        <h4> FestasCaicoenses</h4>
+
+        <form role="search" aria-label="formulario_pesquisa" id="barra_pesquisa">
+        <label for="input_search"></label>
+        <input type="search" id="input_search" name="q" placeholder="Pesquisar" aria-label="campo_pesquisa">
+        </form>
+
+        <nav aria-label="Navegaçao">
+            <ul>
+                <li><a href="index.html">Pagina Inicial</a></li>
+                <li><a href="programacao.html">Programação Geral</a></li>
+                <li><a href="artesanato.html">Artesanato</a></li>
+                <li><a href="familia.html">Eventos em Família</a></li>
+                <li><a href="atos.html">Atos Religiosos</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+                <li><a href="encerramento.html">Encerramento</a></li>
+                <li><a href="organizadores.html">Organizadores</a></li>
+                <li><a href="perfis.html">Perfis</a></li>
+            </ul>
+        </nav>
+
+        <h1>Shows</h1>
+
+    </header>
+
+    <main>
+        <article>
+            <ul>
+                <li>23/07 - Jonas Esticado, Arnaldinho Neto.</li>
+                <li> 24/07 - Henry Freitas , Natanzinho Lima , Iguinho e Lulinha , Kelvy Pablo, Solange Silva.</li>
+                <li>25/07 - Xand Avião , Wesley Safadão , Kadu Martins , Raynel Guedes, Evan Sanfoneiro.</li>
+                <li>26/07 - Pablo, Seu Desejo, Zé Vaqueiro, Mikael Santos, Rodolfo Lopes.</li>
+            </ul>
+        </article>
+
+       <aside>
+
+        <h3>Entre no clima da festa, escute a playlist da festa de Sant’Ana agora e veja o que te espera nessa aguardada festa!</h3>
+       <a href="https://open.spotify.com/playlist/00Pm0mnBI7LjDB0XiGA8uc?si=zup_4zedRwGRUO0moANT_w&pi=mLoXhtqZRqSA9&fbclid=PAQ0xDSwLiGPVleHRuA2FlbQIxMQABp43RYAGHi6RGW0iiED7ozMNI8NMnbVjpXcTv7_4nzdp_xLbBtN6zYaY5rOCN_aem_oKxFNe3nBdHPBMs-9jHwvQ&nd=1&utm_medium=organic&product=open&%24full_url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F00Pm0mnBI7LjDB0XiGA8uc%3Fsi%3Dzup_4zedRwGRUO0moANT_w%26pi%3DmLoXhtqZRqSA9%26fbclid%3DPAZXh0bgNhZW0CMTEAAaeN0WABh4ukRltIohA-6MzDSPDTJ21Y6V3E7-_-J83af8S2wbTes2GmOazgjQ_aem_oKxFNe3nBdHPBMs-9jHwvQ&%24android_redirect_timeout=3000&feature=organic&_branch_match_id=1473352718536274639&_branch_referrer=H4sIAAAAAAAAA%2BWQyW6DMBiEn4bckjgQZamEKlOyNgtZ2qS5WAYMOPEWY0rDoc9eqNSnqPQffs2n0WgmM0blT91urqShyaODleowKm7dZ6VlXETGlYqIlmX3k4IxVGjmZo3FcqBlT%2BtrcOfPHUleS4rhB6O5qV8AAg648BbD1dX3wJnO4KiILGeaU8vxq0KhfkXifTnbv20Bl3BzRKVlD1RD%2BUqeM3O%2F7O8HOK7FJIwYjWsQwMs5A2G6yS4n8LI%2BTiDEZANO0Mv6xW3PzEJmsD1YV%2F4h8I9Lu%2FcxeHcmwzZqL0cOTkYHuwyPJLdnfIur9LpDmHAkX7%2BmG%2BIIL54H3jpvj6%2Fz8nP3WxwzFuLo9u%2FK17Giiew1K2ARa0ljpElMNYkMMpQTWRjXAQC0EoJNoYkrdYoFjVrfmiREaypSFGpZ5kS7C5EbnGrMfwD18WfScwIAAA%3D%3D">A playlist da festa</a>
+
+       </aside>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        const searchForm = document.getElementById("barra_pesquisa");
+        const searchInput = document.getElementById("input_search");
+        const searchResultados = document.getElementById("resultados");
+      
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const searchMap = {
+                "programacao geral": "programacao.html",
+                "artesanato": "artesanato.html",
+                "pagina inicial": "index.html",
+                "eventos em familia": "familia.html",
+                "atos religiosos": "atos.html",
+                "historia": "historia.html",
+                "trajetoria dos peregrinos": "peregrinos.html",
+                "encerramento": "encerramento.html",
+                "organizadores": "organizadores.html",
+                "perfis": "perfis.html"
+            };
+            if (searchMap[searchTerm]) {
+                window.location.href = searchMap[searchTerm];
+            }
+            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
+            }
+
+            else {
+                searchResultados.textContent = 'Digite algo para pesquisar';
+            } 
+        });
+     });
+       </script>
+</body>
+</html>
