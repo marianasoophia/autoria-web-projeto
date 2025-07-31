@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
 
-        <h4> FestasCaicoenses</h4>
+        <h4>FestasCaicoenses</h4>
 
        <form role="search" aria-label="formulario_pesquisa" id="barra_pesquisa">
        <label for="input_search"></label>
@@ -17,7 +18,7 @@
        </form>
 
        <nav aria-label="Navegaçao">
-        <ul>
+        <ul class="menu">
             <li><a href="programacao.html">Programação Geral</a></li>
             <li><a href="artesanato.html">Artesanato</a></li>
             <li><a href="shows.html">Shows</a></li>
@@ -33,10 +34,10 @@
     
     </header>
     <main>
-        <h2>Festa de </h2>
-        <h1>Sant'ana</h1>
+        <h2 id="festa_de">Festa de </h2>
+        <h1 id="santana">Sant'ana</h1>
         <p id="resultados"></p>
-        <img src="imagens/download.png" alt="imagem de santana" width="500px">
+        <img src="imagens/download.png" alt="imagem de santana" width="500px" id="imagem_principal">
     </main>
 
     <script>
@@ -71,6 +72,10 @@
             } 
         });
      });
+        const toggleButton = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu')
+        toggleButton.addEventListener('click', () => {menu.classlist.toggle('show');
+        });
        </script>
 </body>
 </html> 
