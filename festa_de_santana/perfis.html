@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Perfis</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>  
     <header>
@@ -25,16 +25,16 @@
                 <li><a href="familia.html">Eventos em Família</a></li>
                 <li><a href="atos.html">Atos Religiosos</a></li>
                 <li><a href="historia.html">Historia</a></li>
-                <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+                <li><a href="peregrinos.html">Tragetória dos Peregrinos</a></li>
                 <li><a href="encerramento.html">Encerramento</a></li>
                 <li><a href="organizadores.html">Organizadores</a></li>
             </ul>
         </nav>
 
-        <h1>Perfis Oficiais</h1>
-
     </header>
     <main>
+        <h1>Perfis Oficiais</h1>
+
         <p>Aqui estão os perfis oficiais da Festa de Sant’ana:</p>
         <nav id="perfil">
             <ul class="menu_perfil">
@@ -47,38 +47,6 @@
 
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-        const searchForm = document.getElementById("barra_pesquisa");
-        const searchInput = document.getElementById("input_search");
-        const searchResultados = document.getElementById("resultados");
-      
-        searchForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const searchMap = {
-                "programacao geral": "programacao.html",
-                "artesanato": "artesanato.html",
-                "shows": "shows.html",
-                "eventos em familia": "familia.html",
-                "atos religiosos": "atos.html",
-                "historia": "historia.html",
-                "trajetoria dos peregrinos": "peregrinos.html",
-                "encerramento": "encerramento.html",
-                "organizadores": "organizadores.html",
-                "pagina inicial": "index.html"
-            };
-            if (searchMap[searchTerm]) {
-                window.location.href = searchMap[searchTerm];
-            }
-            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
-            }
-
-            else {
-                searchResultados.textContent = 'Digite algo para pesquisar';
-            } 
-        });
-     });
-       </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

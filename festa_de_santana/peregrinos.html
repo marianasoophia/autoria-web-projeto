@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tragetoria dos Peregrinos</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
@@ -31,11 +31,11 @@
             </ul>
         </nav>
 
-        <h1>Tragetoria dos Peregrinos</h1>
 
     </header>
 
     <main>
+        <h1>Tragetória dos Peregrinos</h1>
 
         <article>
             <p>Os peregrinos são grupos de fiéis que juntos, traçam uma longa caminhada a pé, passando de
@@ -46,38 +46,6 @@
 
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-        const searchForm = document.getElementById("barra_pesquisa");
-        const searchInput = document.getElementById("input_search");
-        const searchResultados = document.getElementById("resultados");
-      
-        searchForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const searchMap = {
-                "programacao geral": "programacao.html",
-                "artesanato": "artesanato.html",
-                "shows": "shows.html",
-                "eventos em familia": "familia.html",
-                "atos religiosos": "atos.html",
-                "historia": "historia.html",
-                "pagina inicial": "index.html",
-                "encerramento": "encerramento.html",
-                "organizadores": "organizadores.html",
-                "perfis": "perfis.html"
-            };
-            if (searchMap[searchTerm]) {
-                window.location.href = searchMap[searchTerm];
-            }
-            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
-            }
-
-            else {
-                searchResultados.textContent = 'Digite algo para pesquisar';
-            } 
-        });
-     });
-       </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

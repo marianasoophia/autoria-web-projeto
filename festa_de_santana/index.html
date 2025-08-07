@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
@@ -25,7 +25,7 @@
             <li><a href="familia.html">Eventos em Família</a></li>
             <li><a href="atos.html">Atos Religiosos</a></li>
             <li><a href="historia.html">Historia</a></li>
-            <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+            <li><a href="peregrinos.html">Tragetória dos Peregrinos</a></li>
             <li><a href="encerramento.html">Encerramento</a></li>
             <li><a href="organizadores.html">Organizadores</a></li>
             <li><a href="perfis.html">Perfis</a></li>
@@ -37,45 +37,9 @@
         <h2 id="festa_de">Festa de </h2>
         <h1 id="santana">Sant'ana</h1>
         <p id="resultados"></p>
-        <img src="imagens/download.png" alt="imagem de santana" width="500px" id="imagem_principal">
+        <img src="imagens/download.png" alt="imagem de santana" width="350px" id="imagem_principal">
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-        const searchForm = document.getElementById("barra_pesquisa");
-        const searchInput = document.getElementById("input_search");
-        const searchResultados = document.getElementById("resultados");
-      
-        searchForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const searchMap = {
-                "programacao geral": "programacao.html",
-                "artesanato": "artesanato.html",
-                "shows": "shows.html",
-                "eventos em familia": "familia.html",
-                "atos religiosos": "atos.html",
-                "historia": "historia.html",
-                "trajetoria dos peregrinos": "peregrinos.html",
-                "encerramento": "encerramento.html",
-                "organizadores": "organizadores.html",
-                "perfis": "perfis.html"
-            };
-            if (searchMap[searchTerm]) {
-                window.location.href = searchMap[searchTerm];
-            }
-            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
-            }
-
-            else {
-                searchResultados.textContent = 'Digite algo para pesquisar';
-            } 
-        });
-     });
-        const toggleButton = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu')
-        toggleButton.addEventListener('click', () => {menu.classlist.toggle('show');
-        });
-       </script>
+<script src="js/script.js"></script>
 </body>
 </html> 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos em Familia</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
@@ -24,17 +24,18 @@
                 <li><a href="shows.html">Shows</a></li>
                 <li><a href="atos.html">Atos Religiosos</a></li>
                 <li><a href="historia.html">Historia</a></li>
-                <li><a href="peregrinos.html">Tragetoria dos Peregrinos</a></li>
+                <li><a href="peregrinos.html">Tragetória dos Peregrinos</a></li>
                 <li><a href="encerramento.html">Encerramento</a></li>
                 <li><a href="organizadores.html">Organizadores</a></li>
                 <li><a href="perfis.html">Perfis</a></li>
             </ul>
         </nav>
 
-         <h1>Eventos em Familia</h1>
-
+         
     </header>
     <main>
+        <h1>Eventos em Familia</h1>
+
         <article>
             <ul>
                 <li> Festa dos doces: 16/07 no Pavilhão de Sant'ana.</li>
@@ -47,38 +48,6 @@
         
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-        const searchForm = document.getElementById("barra_pesquisa");
-        const searchInput = document.getElementById("input_search");
-        const searchResultados = document.getElementById("resultados");
-      
-        searchForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const searchTerm = searchInput.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const searchMap = {
-                "programacao geral": "programacao.html",
-                "artesanato": "artesanato.html",
-                "shows": "shows.html",
-                "pagina inicial": "index.html",
-                "atos religiosos": "atos.html",
-                "historia": "historia.html",
-                "trajetoria dos peregrinos": "peregrinos.html",
-                "encerramento": "encerramento.html",
-                "organizadores": "organizadores.html",
-                "perfis": "perfis.html"
-            };
-            if (searchMap[searchTerm]) {
-                window.location.href = searchMap[searchTerm];
-            }
-            else if (searchTerm) {searchResultados.textContent = `Nenhum resultado de "${searchInput.value.trim()}"`;
-            }
-   
-            else {
-                searchResultados.textContent = 'Digite algo para pesquisar';
-            } 
-        });
-     });
-       </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
